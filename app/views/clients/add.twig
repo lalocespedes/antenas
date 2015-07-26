@@ -1,3 +1,7 @@
+{% extends 'templates/main.twig' %}
+
+{% block content %}
+
 <form class="form-horizontal" action="{{ urlFor('clients-add-post') }}" method="post">
 <fieldset>
 
@@ -17,3 +21,5 @@
 
 </fieldset>
 </form>
+
+{% endblock %}
