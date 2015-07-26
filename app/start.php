@@ -27,6 +27,7 @@ $app->configureMode($app->config('mode'), function () use ($app) {
     $app->config = Config::load(INC_ROOT . "/app/config/{$app->mode}.php");
 });
 
+require INC_ROOT . '/app/config/' . 'database.php';
 require 'routes.php';
 
 $view = $app->view();
