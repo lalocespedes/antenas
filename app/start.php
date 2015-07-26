@@ -29,6 +29,7 @@ $app->configureMode($app->config('mode'), function () use ($app) {
 
 require INC_ROOT . '/app/config/' . 'database.php';
 require 'routes.php';
+require 'singletons.php';
 
 $view = $app->view();
 
