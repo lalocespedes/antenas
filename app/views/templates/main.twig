@@ -5,23 +5,37 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Sdmatehuala | {% block title %} {% endblock %}</title>
 	<link href="/css/app.css" type="text/css" rel="stylesheet" />
-    <script src="/js/modernizr.js"></script></head>
+    <script src="/js/modernizr.js"></script>
+</head>
 <body>
 	{% include 'templates/partials/nav.twig' %}
 	{% include 'templates/partials/messages.twig' %}
-	{% block content %}
+
+	<p class="text-center text-danger"> {% if errores %} <i class="fa fa-exclamation-circle"></i> {{ errores }}{% endif %} </p>
+
+	<div class="row">
+
+		<div class="col-md-1">
+		</div>
+		<div class="col-md-11">
+
+			{% block content %}
 	
-		<div class="row">
-			<div class="col-md-12">
-				<fieldset>
-					<legend>{{ title }}</legend>
-				</fieldset>
-			</div>
+				<div class="row">
+					<div class="col-md-12">
+						<fieldset>
+							<legend>{{ title }}</legend>
+						</fieldset>
+					</div>
+				</div>
+
+
+			{% endblock %}
 		</div>
 
-		<p class="text-center text-danger"> {% if errores %} <i class="fa fa-exclamation-circle"></i> {{ errores }}{% endif %} </p>
+	</div>
+	{% include 'templates/partials/footer.twig' %}
 
-	{% endblock %}
 	<script src="/js/app.js"></script>
 </body>
 </html>

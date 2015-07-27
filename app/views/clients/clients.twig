@@ -1,0 +1,35 @@
+{% extends 'templates/main.twig' %}
+
+{% block content %}
+	
+	<div class="col-md-12">
+
+	<div class="panel panel-default">
+		<!-- Default panel contents -->
+		<div class="panel-heading"><h4>Clientes</h4></div>
+			<div class="panel-body">
+				<p>Aqui poner botones</p>
+			</div>
+	
+			<!-- Table -->
+			<table class="table table-bordered bg-primary">
+				<thead>
+					<tr>
+						<th>Nombre</th>
+						<th>Acciones</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for client in clients %}
+						<tr>
+							<td>{{client.client_nombre}}</td>
+							<td></td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+	</div>
+
+	</div>
+
+{% endblock %}

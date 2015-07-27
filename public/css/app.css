@@ -1794,6 +1794,27 @@
 .fa-medium:before {
   content: ""; }
 
+.footer {
+  margin-top: 25px;
+  padding-top: 25px;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 220px;
+  opacity: 0.6;
+  filter: alpha(opacity=60);
+  /* IE < 9.0 */
+  background: -webkit-linear-gradient(90deg, #232526 10%, #414345 90%);
+  /* Chrome 10+, Saf5.1+ */
+  background: -moz-linear-gradient(90deg, #232526 10%, #414345 90%);
+  /* FF3.6+ */
+  background: -ms-linear-gradient(90deg, #232526 10%, #414345 90%);
+  /* IE10 */
+  background: -o-linear-gradient(90deg, #232526 10%, #414345 90%);
+  /* Opera 11.10+ */
+  background: linear-gradient(90deg, #232526 10%, #414345 90%);
+  /* W3C */ }
+
 /*!
  * bootswatch v3.3.5
  * Homepage: http://bootswatch.com

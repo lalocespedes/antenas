@@ -2,22 +2,144 @@
 
 {% block content %}
 
-<form class="form-horizontal" action="{{ urlFor('clients-add-post') }}" method="post">
+<form class="form-horizontal" action="{{ urlFor('clients-add-post') }}" method="post" autocomplete="off">
 <fieldset>
 
 <!-- Form Name -->
 <legend>Form Name</legend>
 
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">Text Input</label>  
-  <div class="col-md-4">
-  <input id="nombre" name="nombre" type="text" placeholder="placeholder" class="form-control input-md">
-  <span class="help-block">help</span>  
-  </div>
+<div class="col-md-6">
+
+<!-- panel generales-->
+<div class="panel panel-primary">
+	  <div class="panel-heading">
+			<h3 class="panel-title">Generales</h3>
+	  </div>
+	  <div class="panel-body">
+
+			<div class="form-group">
+			  <label class="col-md-2 control-label" for="textinput">Nombre</label>  
+			  <div class="col-md-10">
+			  <input id="nombre" name="nombre" type="text" placeholder="Nombre" class="form-control input-md">
+			  <span class="help-block">Nombre completo</span>  
+			  </div>
+			</div>
+
+			<div class="form-group">
+
+					<label class="col-md-2 control-label" for="textinput">RFC</label>  
+				  	<div class="col-md-10">
+				  	<input id="nombre" name="nombre" type="text" placeholder="Registro federal de contribuyentes" class="form-control input-md">
+				  	<span class="help-block"></span>  
+				  	</div>
+
+					<label class="col-md-2 control-label" for="textinput">Etiqueta</label>  
+				  	<div class="col-md-10">
+				  	<input id="nombre" name="nombre" type="text" placeholder="Etiqueta" class="form-control input-md">
+				  	<span class="help-block"></span>  
+				  	</div>
+
+			</div>
+	  </div>
 </div>
 
-<button type="submit">Enviar</button>
+</div>
+<!-- panel direccion-->
+
+<div class="col-md-6">
+
+<div class="panel panel-primary">
+	  <div class="panel-heading">
+			<h3 class="panel-title">Direccion</h3>
+	  </div>
+	  <div class="panel-body">
+		<label class="col-md-2 control-label" for="textinput">Calle</label>  
+	  	<div class="col-md-10">
+	  			<input id="nombre" name="nombre" type="text" placeholder="Calle" class="form-control input-md">
+	  			<span class="help-block"></span>
+	  	</div>
+	  	<label class="col-md-2 control-label" for="textinput">No Ext</label>  
+	  	<div class="col-md-4">
+	  			<input id="nombre" name="nombre" type="text" placeholder="Numero Exterior" class="form-control input-md">
+	  			<span class="help-block"></span>
+	  	</div>
+	  	<label class="col-md-2 control-label" for="textinput">No Int</label>  
+	  	<div class="col-md-4">
+	  			<input id="nombre" name="nombre" type="text" placeholder="Numero interior" class="form-control input-md">
+	  			<span class="help-block"></span>
+	  	</div>
+	  	<label class="col-md-2 control-label" for="textinput">Colonia</label>  
+	  	<div class="col-md-10">
+	  			<input id="nombre" name="nombre" type="text" placeholder="Colonia" class="form-control input-md">
+	  			<span class="help-block"></span>
+	  	</div>
+	  	<label class="col-md-2 control-label" for="textinput">Ciudad</label>  
+	  	<div class="col-md-4">
+	  			<input id="nombre" name="nombre" type="text" placeholder="Ciudad" class="form-control input-md">
+	  			<span class="help-block"></span>
+	  	</div>
+	  	<label class="col-md-2 control-label" for="textinput">Estado</label>  
+	  	<div class="col-md-4">
+	  			<input id="nombre" name="nombre" type="text" placeholder="Estado" class="form-control input-md">
+	  			<span class="help-block"></span>
+	  	</div>
+	  	<label class="col-md-2 control-label" for="textinput">Pais</label>  
+	  	<div class="col-md-4">
+	  			<input id="nombre" name="nombre" type="text" placeholder="Pais" class="form-control input-md">
+	  			<span class="help-block"></span>
+	  	</div>
+	  	<label class="col-md-2 control-label" for="textinput">CP</label>  
+	  	<div class="col-md-4">
+	  			<input id="nombre" name="nombre" type="text" placeholder="Codigo Postal" class="form-control input-md">
+	  			<span class="help-block"></span>
+	  	</div>
+	  </div>
+</div>
+
+</div>
+
+<!-- panel Informacion contacto-->
+<div class="col-md-6">
+<div class="panel panel-primary">
+	  <div class="panel-heading">
+			<h3 class="panel-title">Info Contacto</h3>
+	  </div>
+	  <div class="panel-body">
+		<label class="col-md-2 control-label" for="textinput">Telefono</label>  
+	  	<div class="col-md-10">
+	  			<input id="nombre" name="nombre" type="text" placeholder="Telefono" class="form-control input-md">
+	  			<span class="help-block"></span>
+	  	</div>
+	  	<label class="col-md-2 control-label" for="textinput">Celular</label>  
+	  	<div class="col-md-10">
+	  			<input id="nombre" name="nombre" type="text" placeholder="Celular" class="form-control input-md">
+	  			<span class="help-block"></span>
+	  	</div>
+	  	<label class="col-md-2 control-label" for="textinput">Correo</label>  
+	  	<div class="col-md-10">
+	  			<input id="nombre" name="nombre" type="text" placeholder="@" class="form-control input-md">
+	  			<span class="help-block"></span>
+	  	</div>
+	  </div>
+</div>
+</div>
+
+<!-- panel notas-->
+<div class="col-md-6">
+<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h3 class="panel-title">Notas - referencias </h3>
+	  	</div>
+	  	<div class="panel-body">
+	  		<textarea class="form-control" rows="5"></textarea>
+	  		<span class="help-block"></span>
+		</div>
+</div>
+</div>
+
+<div class="col-md-4 col-md-offset-4">
+<button type="submit" class="btn btn-success btn-lg btn-block">Guardar</button>
+</div>
 
 </fieldset>
 </form>
