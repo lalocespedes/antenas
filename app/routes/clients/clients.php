@@ -1,8 +1,20 @@
 <?php
-	
+
+use Illuminate\Pagination\Paginator;
+
 $app->get('/clients', function() use($app) {
 	
-	$clients = $app->clients->get();
+	$currentPage = $app->request()->get('page');
+
+	Paginator::currentPageResolver(function() use ($currentPage) {
+    	
+    	return $currentPage;
+	
+	});
+
+	$clients = $app->clients->paginate(5);
+
+	$clients->setPath('clients');
 
 	$app->render('clients/clients.twig', [
 		'clients' => $clients

@@ -29,4 +29,8 @@ class Clients extends Eloquent
 		'client_etiqueta',
 	];
 	
+	public function direccion()
+	{
+		return "{$this->client_calle} {$this->client_colonia} {$this->client_NoExt} {$this->client_NoInt}";
+	}
 }
