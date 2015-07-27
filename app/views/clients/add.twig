@@ -2,12 +2,8 @@
 
 {% block content %}
 
+
 <form class="form-horizontal" action="{{ urlFor('clients-add-post') }}" method="post" autocomplete="off">
-<fieldset>
-
-<!-- Form Name -->
-<legend>Form Name</legend>
-
 <div class="col-md-6">
 
 <!-- panel generales-->
@@ -20,22 +16,22 @@
 			<div class="form-group">
 			  <label class="col-md-2 control-label" for="textinput">Nombre</label>  
 			  <div class="col-md-10">
-			  <input id="nombre" name="nombre" type="text" placeholder="Nombre" class="form-control input-md">
-			  <span class="help-block">Nombre completo</span>  
+			  <input id="client_nombre" name="client_nombre" type="text" placeholder="Nombre" class="form-control input-md" value="{% if request.post('client_nombre') %}{{request.post('client_nombre')}}{% else %}{% endif %}">
+			  {% if errors.has('nombre') %}<div class="text-danger">{{ errors.first('nombre')}}</div>{% endif %}
+			  <span class="help-block"></span>
 			  </div>
 			</div>
-
 			<div class="form-group">
 
-					<label class="col-md-2 control-label" for="textinput">RFC</label>  
+					<label class="col-md-2 control-label" for="textinput">RFC</label>
 				  	<div class="col-md-10">
-				  	<input id="nombre" name="nombre" type="text" placeholder="Registro federal de contribuyentes" class="form-control input-md">
+				  	<input id="client_rfc" name="client_rfc" type="text" placeholder="Registro federal de contribuyentes" class="form-control input-md" value="{% if request.post('client_rfc') %}{{request.post('client_rfc')}}{% else %}{% endif %}">
 				  	<span class="help-block"></span>  
 				  	</div>
 
 					<label class="col-md-2 control-label" for="textinput">Etiqueta</label>  
 				  	<div class="col-md-10">
-				  	<input id="nombre" name="nombre" type="text" placeholder="Etiqueta" class="form-control input-md">
+				  	<input id="client_etiqueta" name="client_etiqueta" type="text" placeholder="Etiqueta" class="form-control input-md" value="{% if request.post('client_etiqueta') %}{{request.post('client_etiqueta')}}{% else %}{% endif %}">
 				  	<span class="help-block"></span>  
 				  	</div>
 
@@ -55,42 +51,50 @@
 	  <div class="panel-body">
 		<label class="col-md-2 control-label" for="textinput">Calle</label>  
 	  	<div class="col-md-10">
-	  			<input id="nombre" name="nombre" type="text" placeholder="Calle" class="form-control input-md">
+	  			<input id="client_calle" name="client_calle" type="text" placeholder="Calle" class="form-control input-md"  value="{% if request.post('client_calle') %}{{request.post('client_calle')}}{% else %}{% endif %}">
+	  			{% if errors.has('calle') %}<div class="text-danger">{{ errors.first('calle')}}</div>{% endif %}
 	  			<span class="help-block"></span>
 	  	</div>
 	  	<label class="col-md-2 control-label" for="textinput">No Ext</label>  
 	  	<div class="col-md-4">
-	  			<input id="nombre" name="nombre" type="text" placeholder="Numero Exterior" class="form-control input-md">
+	  			<input id="client_NoExt" name="client_NoExt" type="text" placeholder="Numero Exterior" class="form-control input-md" value="{% if request.post('client_NoExt') %}{{request.post('client_NoExt')}}{% else %}{% endif %}">
+	  			{% if errors.has('noext') %}<div class="text-danger">{{ errors.first('noext')}}</div>{% endif %}
 	  			<span class="help-block"></span>
 	  	</div>
 	  	<label class="col-md-2 control-label" for="textinput">No Int</label>  
 	  	<div class="col-md-4">
-	  			<input id="nombre" name="nombre" type="text" placeholder="Numero interior" class="form-control input-md">
+	  			<input id="client_NoInt" name="client_NoInt" type="text" placeholder="Numero interior" class="form-control input-md" value="{% if request.post('client_NoInt') %}{{request.post('client_NoInt')}}{% else %}{% endif %}">
+	  			{% if errors.has('noint') %}<div class="text-danger">{{ errors.first('noint')}}</div>{% endif %}
 	  			<span class="help-block"></span>
 	  	</div>
 	  	<label class="col-md-2 control-label" for="textinput">Colonia</label>  
 	  	<div class="col-md-10">
-	  			<input id="nombre" name="nombre" type="text" placeholder="Colonia" class="form-control input-md">
+	  			<input id="client_colonia" name="client_colonia" type="text" placeholder="Colonia" class="form-control input-md" value="{% if request.post('client_colonia') %}{{request.post('client_colonia')}}{% else %}{% endif %}">
+	  			{% if errors.has('client_colonia') %}<div class="text-danger">{{ errors.first('client_colonia')}}</div>{% endif %}
 	  			<span class="help-block"></span>
 	  	</div>
 	  	<label class="col-md-2 control-label" for="textinput">Ciudad</label>  
 	  	<div class="col-md-4">
-	  			<input id="nombre" name="nombre" type="text" placeholder="Ciudad" class="form-control input-md">
+	  			<input id="client_ciudad" name="client_ciudad" type="text" placeholder="Ciudad" class="form-control input-md" value="{% if request.post('client_ciudad') %}{{request.post('client_ciudad')}}{% else %}{% endif %}">
+	  			{% if errors.has('ciudad') %}<div class="text-danger">{{ errors.first('ciudad')}}</div>{% endif %}
 	  			<span class="help-block"></span>
 	  	</div>
 	  	<label class="col-md-2 control-label" for="textinput">Estado</label>  
 	  	<div class="col-md-4">
-	  			<input id="nombre" name="nombre" type="text" placeholder="Estado" class="form-control input-md">
+	  			<input id="client_estado" name="client_estado" type="text" placeholder="Estado" class="form-control input-md" value="{% if request.post('client_estado') %}{{request.post('client_estado')}}{% else %}{% endif %}">
+	  			{% if errors.has('estado') %}<div class="text-danger">{{ errors.first('estado')}}</div>{% endif %}
 	  			<span class="help-block"></span>
 	  	</div>
 	  	<label class="col-md-2 control-label" for="textinput">Pais</label>  
 	  	<div class="col-md-4">
-	  			<input id="nombre" name="nombre" type="text" placeholder="Pais" class="form-control input-md">
+	  			<input id="client_pais" name="client_pais" type="text" placeholder="Pais" class="form-control input-md" value="{% if request.post('client_pais') %}{{request.post('client_pais')}}{% else %}{% endif %}">
+	  			{% if errors.has('pais') %}<div class="text-danger">{{ errors.first('pais')}}</div>{% endif %}
 	  			<span class="help-block"></span>
 	  	</div>
 	  	<label class="col-md-2 control-label" for="textinput">CP</label>  
 	  	<div class="col-md-4">
-	  			<input id="nombre" name="nombre" type="text" placeholder="Codigo Postal" class="form-control input-md">
+	  			<input id="client_codigoPostal" name="client_codigoPostal" type="text" placeholder="Codigo Postal" class="form-control input-md" value="{% if request.post('client_codigoPostal') %}{{request.post('client_codigoPostal')}}{% else %}{% endif %}">
+	  			{% if errors.has('cp') %}<div class="text-danger">{{ errors.first('cp')}}</div>{% endif %}
 	  			<span class="help-block"></span>
 	  	</div>
 	  </div>
@@ -107,17 +111,20 @@
 	  <div class="panel-body">
 		<label class="col-md-2 control-label" for="textinput">Telefono</label>  
 	  	<div class="col-md-10">
-	  			<input id="nombre" name="nombre" type="text" placeholder="Telefono" class="form-control input-md">
+	  			<input id="client_tel" name="client_tel" type="text" placeholder="Telefono" class="form-control input-md" value="{% if request.post('client_tel') %}{{request.post('client_tel')}}{% else %}{% endif %}">
+	  			{% if errors.has('telefono') %}<div class="text-danger">{{ errors.first('telefono')}}</div>{% endif %}
 	  			<span class="help-block"></span>
 	  	</div>
 	  	<label class="col-md-2 control-label" for="textinput">Celular</label>  
 	  	<div class="col-md-10">
-	  			<input id="nombre" name="nombre" type="text" placeholder="Celular" class="form-control input-md">
+	  			<input id="client_celular" name="client_celular" type="text" placeholder="Celular" class="form-control input-md" value="{% if request.post('client_celular') %}{{request.post('client_celular')}}{% else %}{% endif %}">
+	  			{% if errors.has('celular') %}<div class="text-danger">{{ errors.first('celular')}}</div>{% endif %}
 	  			<span class="help-block"></span>
 	  	</div>
 	  	<label class="col-md-2 control-label" for="textinput">Correo</label>  
 	  	<div class="col-md-10">
-	  			<input id="nombre" name="nombre" type="text" placeholder="@" class="form-control input-md">
+	  			<input id="client_correo" name="client_correo" type="text" placeholder="@" class="form-control input-md" value="{% if request.post('client_correo') %}{{request.post('client_correo')}}{% else %}{% endif %}">
+	  			{% if errors.has('correo') %}<div class="text-danger">{{ errors.first('correo')}}</div>{% endif %}
 	  			<span class="help-block"></span>
 	  	</div>
 	  </div>
@@ -131,17 +138,16 @@
 			<h3 class="panel-title">Notas - referencias </h3>
 	  	</div>
 	  	<div class="panel-body">
-	  		<textarea class="form-control" rows="5"></textarea>
+	  		<textarea id="client_notas" class="form-control" rows="5" name="client_notas">{% if request.post('client_notas') %}{{request.post('client_notas')}}{% else %}{% endif %}</textarea>
 	  		<span class="help-block"></span>
 		</div>
 </div>
 </div>
 
 <div class="col-md-4 col-md-offset-4">
+<hr>
 <button type="submit" class="btn btn-success btn-lg btn-block">Guardar</button>
 </div>
 
-</fieldset>
 </form>
-
 {% endblock %}

@@ -2,34 +2,49 @@
 
 {% block content %}
 	
-	<div class="col-md-12">
-
-	<div class="panel panel-default">
-		<!-- Default panel contents -->
-		<div class="panel-heading"><h4>Clientes</h4></div>
-			<div class="panel-body">
-				<p>Aqui poner botones</p>
-			</div>
-	
-			<!-- Table -->
-			<table class="table table-bordered bg-primary">
-				<thead>
-					<tr>
-						<th>Nombre</th>
-						<th>Acciones</th>
-					</tr>
-				</thead>
-				<tbody>
-					{% for client in clients %}
-						<tr>
-							<td>{{client.client_nombre}}</td>
-							<td></td>
-						</tr>
-					{% endfor %}
-				</tbody>
-			</table>
-	</div>
-
+	 <div class="row">
+        <div class="col-xs-12 col-sm-offset-3 col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-heading c-list">
+                    <span class="title">Clientes</span>
+                    <ul class="pull-right c-controls">
+                        <li><a href="#cant-do-all-the-work-for-you" data-toggle="tooltip" data-placement="top" title="Add Contact"><i class="glyphicon glyphicon-plus"></i></a></li>
+                        <li><a href="#" class="hide-search" data-command="toggle-search" data-toggle="tooltip" data-placement="top" title="Toggle Search"><i class="fa fa-ellipsis-v"></i></a></li>
+                    </ul>
+                </div>
+                
+                <div class="row" style="display: none;">
+                    <div class="col-xs-12">
+                        <div class="input-group c-search">
+                            <input type="text" class="form-control" id="contact-list-search">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search text-muted"></span></button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                
+                <ul class="list-group" id="contact-list">
+                	{% for client in clients %}
+                    <li class="list-group-item">
+                        <div class="col-xs-12 col-sm-3">
+                            <img src="/images/client.png" alt="Scott Stevens" class="img-responsive img-circle" />
+                        </div>
+                        <div class="col-xs-12 col-sm-9">
+                            <span class="name">{{client.client_nombre}}</span><br/>
+                            <span class="fa fa-map-marker text-muted c-info" data-toggle="tooltip" title="5842 Hillcrest Rd"></span>
+                            <span class="visible-xs"> <span class="text-muted">5842 Hillcrest Rd</span><br/></span>
+                            <span class="fa fa-phone text-muted c-info" data-toggle="tooltip" title="(870) 288-4149"></span>
+                            <span class="visible-xs"> <span class="text-muted">(870) 288-4149</span><br/></span>
+                            <span class="fa fa-envelope-o text-muted c-info" data-toggle="tooltip" title="scott.stevens@example.com"></span>
+                            <span class="visible-xs"> <span class="text-muted">scott.stevens@example.com</span><br/></span>
+                        </div>
+                        <div class="clearfix"></div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
 	</div>
 
 {% endblock %}
