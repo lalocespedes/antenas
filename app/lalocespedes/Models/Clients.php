@@ -33,4 +33,15 @@ class Clients extends Eloquent
 	{
 		return "{$this->client_calle} {$this->client_colonia} {$this->client_NoExt} {$this->client_NoInt}";
 	}
+
+	public function setClientNumber()
+	{
+
+		//if(!$this->client_numbere) {
+			
+			//generar numero de cleinte automatico
+			//$this->attributes['slug'] = Str::slug($value);
+		//}
+
+	}
 }
